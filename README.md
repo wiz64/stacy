@@ -1,2 +1,2 @@
 # stacy
-stacy is a cute little who can manage your blog, social accounts, search for you, tell you jokes
+Stacy is a little girl who can manage your everyday tasks like posting to social media, blog, channels. She can post memes on your behalf, serve you memes, music and jokes, drive away your emptyness.
