@@ -4,7 +4,7 @@
  var stacy_info = {
     name : "Miss Stacy",
     version : "0.01",
-    faces : '../assets/stacy.png',
+    pfp : '../body/face/0.jpg',
     birth : {
         stamp:"2021-10-29T00:00:00+0000",
         date:"29/10/2021",
