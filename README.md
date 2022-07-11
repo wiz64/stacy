@@ -5,8 +5,8 @@ Stacy is a little girl who can manage your everyday tasks like posting to social
 > <img src="./body/face/0.jpg" alt="stacy profile pic" width="100"/><br>
 > Name : `Miss Stacy` <br>
 > Version : `0.01` <br>
-> Birthdate : 29 October 2021
-> Type : Humanoid Robot
+> Birthdate : 29 October 2021 <br>
+> Type : Humanoid Robot <br>
 
 ### Todo
 - Impliment Machine Learning / AI
