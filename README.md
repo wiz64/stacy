@@ -10,7 +10,7 @@ Stacy is a little girl who can manage your everyday tasks like posting to social
 
 ### Todo
 - Impliment Machine Learning / AI
-- Impliment Discord, Telegram Implimentation
+- Impliment Discord, Telegram Interface
 - Add Jokes API
 - Add Music API (https://docs.saavn.me)
 - Add Memes API (https://github.com/D3vd/Meme_Api)
