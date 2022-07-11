@@ -15,4 +15,12 @@ Stacy is a little girl who can manage your everyday tasks like posting to social
 - Add Music API (https://docs.saavn.me)
 - Add Memes API (https://github.com/D3vd/Meme_Api)
 
+<<<<<<< HEAD
 This project is a tribute to a special one ! ❤️
+=======
+### Start
+- Start the bot
+```
+node main.js
+```
+>>>>>>> 166d03d (v0.0.2)

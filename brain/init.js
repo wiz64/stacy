@@ -6,11 +6,11 @@
     version : "0.01",
     pfp : '../body/face/0.jpg',
     birth : {
-        stamp:"2021-10-29T00:00:00+0000",
+        stamp:"2021-10-29T10:13:00+0000",
         date:"29/10/2021",
         words:"29 October 2021",
         place:"Internet",
-        age : getAge('2021-10-29T00:00:00+0000')
+        age : getAge('2021-10-29T10:13:00+0000')
     },
     aliases : ["Stacy", "Stacy the Bot", "Miss Stacy the Bot"],
     country : "Antarctica",
