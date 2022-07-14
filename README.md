@@ -10,7 +10,7 @@ Stacy is a little girl who can manage your everyday tasks like posting to social
 
 ### Todo
 - Impliment Machine Learning / AI
-- Impliment Discord, Telegram Interface
+- Impliment Discord Bot
 - Add Jokes API
 - Add Music API (https://docs.saavn.me)
 - Add Memes API (https://github.com/D3vd/Meme_Api)
@@ -18,7 +18,9 @@ Stacy is a little girl who can manage your everyday tasks like posting to social
 This project is a tribute to a special one ! ❤️
 =======
 ### Start
-- Start the bot
+- Configure .env file
+- Install packages and Start the bot
 ```
+npm install
 node main.js
 ```
