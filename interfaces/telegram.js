@@ -1,16 +1,40 @@
 const { Telegraf } = require('telegraf')
+const processor = require('../brain/processor.js')
 require('dotenv').config()
+
 if(!process.env.TELEGRAM_BOT_TOKEN) {
   console.log("[ERROR] TELEGRAM_BOT_TOKEN not set \n Please configure your bot token in .env")
   process.exit()
 }
-
+botInfo = 0;
 function ProcessMessage(ctx) {
-  console.log(`[TG] ${ctx.update.message.from.first_name} (${ctx.update.message.from.username}) sent: ${ctx.update.message.text}`)
-  ctx.reply('Hello '+ctx.update.message.from.first_name)
+  // user object contains information about the user who sent the message, like username, firstname, id and profile picture url
+ //console.log(ctx);
+ if(!botInfo) {
+  botInfo = ctx.botInfo;
+  console.log(`LOGGED IN AS  [${botInfo.first_name}] @${botInfo.username} (${botInfo.id})`)
+}
+msgData = {
+  platform: 'telegram',
+  user : {
+    id: ctx.update.message.from.id,
+    username: ctx.update.message.from.username,
+    firstname: ctx.update.message.from.first_name
+  },
+  text: ctx.update.message.text,
+  date: ctx.update.message.date,
+  id : ctx.update.message.message_id,
+  ctxObj: ctx
+}
+  //console.log(user)
+  processor.process(msgData)
 
 }
+
+
 const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN)
+// when telegram bot is running, echo the logged in bot username
+bot.on()
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.use(async (ctx, next) => {
   //console.time(`Processing update ${ctx.update.update_id}`)

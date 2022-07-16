@@ -9,18 +9,24 @@ console.log(` [INIT] Stacy is starting...`)
 var stacy_info = require('./brain/init.js')
 var quic = require('./brain/quic.js')
 var interfaces = require('./interfaces/interfaces.js')
+require('dotenv').config();
 
 // Greet the user
 var greet = ` [GREET] Hello, I'm ${stacy_info.name} ! I am ${stacy_info.birth.age}old. You can also call me ${quic.randomFromList(stacy_info.aliases)}.`
 console.log(greet)
-
+if(process.env.USE_TELEGRAM == 1) {
 console.log(" [INFO] Starting Telegram Interface ...")
 // RUN TELEGRAM SCRIPT
 interfaces.start('node','interfaces/telegram.js')
+} else { console.log(" [INFO] Telegram Interface is Disabled") }
 
+if(process.env.USE_WEB == 1) {
 // express hello world listen on port 3000
 console.log(" [INFO] Starting Web Service ...")
 interfaces.start('node','interfaces/web.js')
+} else { console.log(" [INFO] Web Service is Disabled") }
+
+
 
 var cleanExit = function() {
     interfaces.killAll();
