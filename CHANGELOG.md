@@ -1,5 +1,9 @@
 # Changelog File
 for Miss Stacy
+## v0.21
+- [x] sending memes now works (syntaxt: `send memes <subreddit> <count>`)
+- [x] added quic.log
+- [x] many other minor improvements
 
 ## v0.20
 - [x] Add plugin system

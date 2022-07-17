@@ -19,7 +19,7 @@ msgData = {
   user : {
     id: ctx.update.message.from.id,
     username: ctx.update.message.from.username,
-    firstname: ctx.update.message.from.first_name
+    first_name: ctx.update.message.from.first_name
   },
   text: ctx.update.message.text,
   date: ctx.update.message.date,
@@ -28,6 +28,7 @@ msgData = {
 }
   //console.log(user)
   processor.process(msgData)
+  console.log(`[TG] ${msgData.user.first_name} (${msgData.user.username}) sent: ${msgData.text}`)
 
 }
 
@@ -38,7 +39,7 @@ bot.on()
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.use(async (ctx, next) => {
   //console.time(`Processing update ${ctx.update.update_id}`)
-  await ProcessMessage(ctx) // runs next middleware
+  ProcessMessage(ctx)
   // runs after next middleware finishes
   //console.timeEnd(`Processing update ${ctx.update.update_id}`)
 })

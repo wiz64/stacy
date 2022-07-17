@@ -9,5 +9,23 @@ function reply(data, msg) {
         // discord.sendMessage(msg)
     }
 }
-
-module.exports.reply = reply;
+function replyWithPhoto(data, src, caption) {
+    if(data.platform == 'telegram') {
+        ctx = data.ctxObj;
+        if(caption) {
+            //console.log(src)
+            ctx.replyWithPhoto({ url: src }, { caption: caption });
+        } else {
+        ctx.replyWithPhoto({ url: src }); }
+    }
+    // if msg platform is discord, send reply to discord channel
+    if(data.platform == 'discord') {
+        // send message to discord channel
+        // discord.sendMessage(msg)
+    }
+    return;
+}
+module.exports = {
+    reply: reply,
+    replyWithPhoto: replyWithPhoto
+}

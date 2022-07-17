@@ -1,6 +1,10 @@
 # Stacy
 Stacy is a little girl who can manage your everyday tasks like posting to social media, blog, channels. She can post memes on your behalf, serve you memes, music and jokes, drive away your emptyness.
 
+### Interact :
+> Telegram : [@wiz64_stacy_bot](https://telegram.me/wiz64_stacy_bot)
+Try `send memes linuxmemes 3`
+
 ### Details
 > <img src="./body/face/0.jpg" alt="stacy profile pic" width="150"/><br>
 > Name : `Miss Stacy` <br>
