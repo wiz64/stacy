@@ -2,12 +2,12 @@
 Stacy is a little girl who can manage your everyday tasks like posting to social media, blog, channels. She can post memes on your behalf, serve you memes, music and jokes, drive away your emptyness.
 
 ### Interact :
-> Telegram : [@wiz64_stacy_bot](https://telegram.me/wiz64_stacy_bot)
-<br>Try `send memes linuxmemes 3`<br>
+> Telegram : [@wiz64_stacy_bot](https://telegram.me/wiz64_stacy_bot) <br>
+Try `send memes linuxmemes 3`<br>
 
 ### Details
 > <img src="./body/face/0.jpg" alt="stacy profile pic" width="150"/>
-><br>
+
 > Name : `Miss Stacy` <br>
 > Version : `0.21` <br>
 > Birthdate : `29 October 2021` <br>
@@ -22,6 +22,7 @@ Stacy is a little girl who can manage your everyday tasks like posting to social
 
 ### This project is a tribute to a special one ! ❤️
 <hr>
+
 ### Start
 - Configure .env file
 - Install packages and Start the bot
