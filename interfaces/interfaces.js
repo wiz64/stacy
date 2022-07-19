@@ -39,7 +39,7 @@ a_child.forEach(child => {
     console.log("Killing child process: "+child)
     kill(child);
     });
-    processlist = ['interfaces/web.js','interfaces/telegram.js']
+    processlist = ['interfaces/web.js','interfaces/telegram.js','interfaces/discord.js']
     processlist.forEach(proc => {
         try {
     var output = execSync("kill $(ps aux | grep "+proc+" |  tr -s ' ' | cut -d ' ' -f 2| awk '{print $1}')", { encoding: 'utf-8' });

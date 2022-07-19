@@ -26,7 +26,11 @@ console.log(" [INFO] Starting Web Service ...")
 interfaces.start('node','interfaces/web.js')
 } else { console.log(" [INFO] Web Service is Disabled") }
 
-
+// if discord is enabled, start the discord interface
+if(process.env.USE_DISCORD == 1) {
+console.log(" [INFO] Starting Discord Interface ...")
+interfaces.start('node','interfaces/discord.js')
+} else { console.log(" [INFO] Discord Interface is Disabled") }
 
 var cleanExit = function() {
     interfaces.killAll();
