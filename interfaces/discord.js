@@ -2,6 +2,29 @@ const processor = require('../brain/processor.js')
 require('dotenv').config()
 
 var token = process.env.DISCORD_BOT_TOKEN
+
+function ProcessMessage(message) {
+	if(message.author.bot) return;
+	// user object contains information about the user who sent the message, like username, firstname, id and profile picture url
+   //console.log(message)
+  msgData = {
+	platform: 'discord',
+	user : {
+	  id: message.author.id,
+	  username: message.author.username,
+	  first_name: message.author.username,
+	},
+	text: message.content,
+	date: message.createdAt,
+	id : message.id,
+	ctxObj: message
+  }
+	//console.log(user)
+	processor.process(msgData)
+	console.log(`[DC] ${msgData.user.first_name} (${msgData.user.username}) sent: ${msgData.text}`)
+  
+  }
+
 // Define Client and Intents
 const { Client, Intents } = require('discord.js');
 
@@ -22,6 +45,7 @@ client.on('message', message => {
 		// send back "Pong." to the channel the message was sent in
 		message.channel.send('Pong.');
 	}
+	ProcessMessage(message);
 });
 
 client.login(token);

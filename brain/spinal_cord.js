@@ -5,8 +5,9 @@ function reply(data, msg) {
     }
     // if msg platform is discord, send reply to discord channel
     if(data.platform == 'discord') {
+        //console.log(data)
         // send message to discord channel
-        // discord.sendMessage(msg)
+        ctx.reply(msg)
     }
 }
 function replyWithPhoto(data, src, caption) {
@@ -21,7 +22,8 @@ function replyWithPhoto(data, src, caption) {
     // if msg platform is discord, send reply to discord channel
     if(data.platform == 'discord') {
         // send message to discord channel
-        // discord.sendMessage(msg)
+        ctx.channel.send(src);
+        ctx.channel.send(caption);
     }
     return;
 }
