@@ -4,19 +4,18 @@ Stacy is a little girl who can manage your everyday tasks like posting to social
 ### Interact :
 > Telegram : [@wiz64_stacy_bot](https://telegram.me/wiz64_stacy_bot) <br>
 Try `send memes linuxmemes 3`<br>
+> Discord : 
 
 ### Details
 > <img src="./body/face/0.jpg" alt="stacy profile pic" width="150"/>
 
 > Name : `Miss Stacy` <br>
-> Version : `0.21` <br>
+> Version : `0.31` <br>
 > Birthdate : `29 October 2021` <br>
 > Type : `Humanoid Robot` <br>
 
 ### Todo
 - Impliment Machine Learning / AI
-- Add Plugin System
-- Impliment Discord Bot
 - Add Jokes API
 - Add Music API (https://docs.saavn.me)
 
