@@ -52,10 +52,9 @@ async function getMeme(count, subreddit){
 
 
 async function OnMessageEvent(data, spinal_cord) {
-    const quic = data.modules.quic;
     console.log("[MEMES] Checking if user requested a meme")
     try {
-    if(data.text.startsWith('send meme')) {
+    if(data.text.startsWith('send meme') || quic.containsWords(data.text,["stacy","meme"])) {
         var q = data.text.split(' ');
         if (q[2]) {
             var y = q[2];

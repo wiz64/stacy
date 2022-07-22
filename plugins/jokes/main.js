@@ -1,3 +1,4 @@
+const quic = require('../../brain/quic.js');
 var jokes = require('./jokes.js');
 var info = {
     "id": "jokes",
@@ -13,14 +14,14 @@ var init = function(init) {
     // do stuff
 }
 
-var OnMessageEvent = function(data, spinal_cord) {
-    console.log("[JOKES] Checking if user requested a joke")
-    if(data.text == 'send joke') {
-        var joke = jokes.getJoke();
+var OnMessageEvent = async function(data, spinal_cord) {
+    console.log("[JOKES] Checking if user requested a joke");
+    if((data.text == 'send joke') || (quic.containsWords(data.text,["stacy","joke"]))  ) {
+        var joke = await jokes.getJoke();
         spinal_cord.reply(data,joke);
         return;
     }
-    // do stuff
+    //do stuff
 }
 module.exports = {
     info: info,

@@ -2,7 +2,9 @@
 // ===========================================================================
 // This module is the main processor module. It is responsible for processing the input/text passed onto
 
-const quic = require('./quic.js');
+// quic is a frequently used library, we are defining it globally so that we can use it in the plugins
+global.quic = require('./quic.js');
+
 
 spinal_cord = require('./spinal_cord.js')
 plugin_system = require('./plugin_system.js');
@@ -21,7 +23,7 @@ function process(data) {
                 try {
                     plugin.OnMessageEvent(data, spinal_cord);
                 }
-                catch(err) {error = "[ERROR] "+plugin.info.name+" failed to process message ";console.log(error);quic.log(err);return}
+                catch(err) {error = "[ERROR] "+plugin.info.name+" failed to process message ";console.log(error);quic.log(err,"error");return}
             }
         }
     }
