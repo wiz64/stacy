@@ -16,7 +16,8 @@ var init = function(init) {
     // do stuff
 }
 async function getMeme(count, subreddit){
-    if (!count) count = 1;
+    // sanitise the inputs
+    if (!count) {count = 1} else count = parseInt(count);
     var MEME_API =  BASE_MEME_API;
     if (subreddit) { MEME_API = MEME_API + "/" + subreddit; }
     MEME_API = MEME_API + "/" + count;

@@ -20,6 +20,16 @@ function CurrentTime_() {
     var time = hours + "_" + minutes + "_" + seconds + "-" + month + "_" + day + "_" + year;
     return time;
 }
+function CurrentDate_() {
+    // get current timestamp and convert it to mm_dd_yyyy and return it
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    var time = month + "_" + day + "_" + year;
+    return time;
+}
+
 function randomFromList(list) {
     return list[Math.floor(Math.random() * list.length)]; 
 }
@@ -43,7 +53,7 @@ function containsWords(text,list) {
 
 function log(text,type) {
     var fs = require('fs');
-    var filename = CurrentTime_()+".log";
+    var filename = CurrentDate_()+".log";
     var DIR = "logs/";
     if(type == undefined) {type = "info";}
 
