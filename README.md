@@ -5,6 +5,7 @@ Stacy is a little girl who can manage your everyday tasks like posting to social
 > Telegram : [@wiz64_stacy_bot](https://telegram.me/wiz64_stacy_bot) <br>
 > Discord : [Join Server to Chat](https://discord.gg/tyG9UkZcHK)<br>
 Try `send memes linuxmemes 3`<br>
+or `send joke stacy` <br>
 
 ### Details
 > <img src="./body/face/0.jpg" alt="stacy profile pic" width="150"/>
