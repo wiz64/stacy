@@ -7,6 +7,10 @@ function isInt(value) {
            parseInt(Number(value)) == value && 
            !isNaN(parseInt(value, 10));
   }
+function command(text,command) {
+    // if text starts with command prefix return true
+    if (text.startsWith(stc_prefix+command)) { return true} else {return false};
+}
 
 function CurrentTime_() {
     // get current timestamp and convert it to hh_mm_ss-mm_dd_yyyy and return it
@@ -74,6 +78,6 @@ module.exports= {
     randomFromList: randomFromList,
     log : log,
     containsWords: containsWords,
-    CurrentTime_ : CurrentTime_
-
+    CurrentTime_ : CurrentTime_,
+    command : command
 }

@@ -14,7 +14,7 @@ or `send joke stacy` <br>
 > Version : `0.31` <br>
 > Birthdate : `29 October 2021` <br>
 > Type : `Humanoid Robot` <br>
-
+> Written in : `Javascript` <br>
 ### Todo
 - Impliment Machine Learning / AI
 - Add Jokes API
@@ -24,6 +24,7 @@ or `send joke stacy` <br>
 <hr>
 
 ### Start
+- Install nodejs and npm
 - Configure .env file
 - Install packages and Start the bot
 ```

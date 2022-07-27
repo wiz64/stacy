@@ -2,6 +2,7 @@ const processor = require('../brain/processor.js')
 require('dotenv').config()
 
 var token = process.env.DISCORD_BOT_TOKEN
+global.stc_prefix = process.env.COMMAND_PREFIX
 
 function ProcessMessage(message) {
 	if(message.author.bot) return;

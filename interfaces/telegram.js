@@ -1,6 +1,7 @@
 const { Telegraf } = require('telegraf')
 const processor = require('../brain/processor.js')
 require('dotenv').config()
+global.stc_prefix = process.env.COMMAND_PREFIX
 
 if(!process.env.TELEGRAM_BOT_TOKEN) {
   console.log("[ERROR] TELEGRAM_BOT_TOKEN not set \n Please configure your bot token in .env")
