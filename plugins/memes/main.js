@@ -11,7 +11,7 @@ var info = {
     "version": "1.0",
     "platforms": ["telegram", "discord", "web"]
 }
-var init = function(init) {
+async function init(init) {
     console.log("[MEMES] Plugin loaded")
     // do stuff
 }
@@ -22,7 +22,7 @@ async function getMeme(count, subreddit){
     if (subreddit) { MEME_API = MEME_API + "/" + subreddit; }
     MEME_API = MEME_API + "/" + count;
     
-    console.log(MEME_API);
+    //console.log(MEME_API);
    // use axios to make a get request to the MEME_API, validate response code and return the response
     return await axios.get(MEME_API)
     .then(function(response){

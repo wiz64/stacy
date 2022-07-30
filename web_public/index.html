@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+button.submit {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.submit:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3>Stacy <3</h3>
+
+<div class="container">
+  
+    <label for="fname">Your name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+   <!-- <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+  
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+-->
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write something.." style="height:100px"></textarea>
+
+    <button class="submit" onclick="SendRequest()"> SUBMIT </button>
+    <hr><br>
+    <div id="response">
+        --- RESPONSE ---
+    </div>
+  
+</div>
+<!-- load jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    // make ajax call to server at /web-api
+    function SendRequest() {
+    // get the message from form, send it to the api with message in the body and get the response
+    // get the message from the form
+    var message = $('#message').val();
+    // get the first name from the form
+    var firstname = $('#fname').val();
+    
+    // send the message to the api
+    $.ajax({
+        url: '/web-api',
+        type: 'POST',
+        data: {
+            message: message,
+            first_name: firstname
+        },
+        success: function(data) {
+            // update the response div
+            $('#response').html(data);
+            // set cookie username
+            setCookie("username", firstname, 30);
+        }
+    });
+
+    
+    }
+</script>
+<script>
+  function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+  }
+  function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  }
+  
+  // setCookie("user_email","bobthegreat@gmail.com",30); //set "user_email" cookie, expires in 30 days
+  var username=getCookie("username");
+  if (username!=null) {
+    $('#fname').val(username);
+  }
+  </script>
+</body>
+</html>

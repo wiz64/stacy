@@ -1,6 +1,6 @@
 function reply(data, msg) {
+    ctx = data.ctxObj;
     if(data.platform == 'telegram') {
-        ctx = data.ctxObj;
         ctx.reply(msg)
     }
     // if msg platform is discord, send reply to discord channel
@@ -9,6 +9,12 @@ function reply(data, msg) {
         // send message to discord channel
         ctx.reply(msg)
     }
+    if(data.platform == 'web') {
+        // sif message starts with https
+        data.res_array.push(msg);
+        //console.log("push: "+data.res_array);
+    }
+
 }
 function replyWithPhoto(data, src, caption) {
     if(data.platform == 'telegram') {
@@ -25,7 +31,15 @@ function replyWithPhoto(data, src, caption) {
         ctx.channel.send(src);
         ctx.channel.send(caption);
     }
-    return;
+    if(data.platform == 'web') {
+        // sif message starts with https
+        if(src.startsWith('https://')) {
+            msg = `<img src='${src}'> <br> ${caption} <br>`
+        }
+        data.res_array.push(msg);
+        //console.log("push: "+data.res_array);
+
+    }
 }
 module.exports = {
     reply: reply,

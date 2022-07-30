@@ -10,7 +10,7 @@ spinal_cord = require('./spinal_cord.js')
 plugin_system = require('./plugin_system.js');
 stc_Plugins = plugin_system.loadPlugins();
 
-function process(data) {
+async function process(data) {
         ctx = data.ctxObj;
         data.modules = {
             quic : require('./quic.js'),
@@ -21,7 +21,7 @@ function process(data) {
             if (typeof plugin.OnMessageEvent !== "undefined") { 
                 // safe to use the function
                 try {
-                    plugin.OnMessageEvent(data, spinal_cord);
+                    await plugin.OnMessageEvent(data, spinal_cord);
                 }
                 catch(err) {error = "[ERROR] "+plugin.info.name+" failed to process message ";console.log(error);quic.log(err,"error");return}
             }
