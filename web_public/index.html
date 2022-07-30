@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- favicon.jpg -->
+<link rel="icon" type="image/jpg" href="./favicon.jpg">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -39,7 +41,7 @@ button.submit:hover {
 </head>
 <body>
 
-<h3>Stacy - Web</h3>
+<h3 style="text-align:center;">Stacy - Web</h3>
 
 <div class="container">
   
@@ -62,14 +64,14 @@ button.submit:hover {
     <button class="submit" onclick="SendRequest()"> SUBMIT </button>
     <hr><br>
     <div id="response">
-        Example : <br>
+        Interactions : <br>
         <h4> Jokes </h4>
         <code>send joke</code> - will send you a random joke<br>
         <h4> Memes (reddit)</h4>
         <code>send meme</code> - will send you a random meme (reddit)<br>
         <h5> Syntax </h5>
         <code>send meme [subreddit] [count]</code> -
-           will send you [count &lt; 10 ] memes from [subreddit]<br>
+           will send you [count &lt; 10] memes from [subreddit]<br>
         <h5> Example </h5>
         <code>send meme linuxmemes 3</code> - will send you 3 random memes from r/linuxmemes<br>
         
