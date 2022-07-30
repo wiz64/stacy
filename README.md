@@ -9,8 +9,8 @@ Try `send memes linuxmemes 3`<br>
 or `send joke stacy` ,`send joke`,`send meme`<br>
 
 ### Details
-> <img src="./body/face/0.jpg" alt="stacy profile pic" width="150"/>
 
+> <img src="./body/face/0.jpg" alt="stacy profile pic" width="150"/> <br>
 > Name : `Miss Stacy` <br>
 > Version : `0.35` <br>
 > Birthdate : `29 October 2021` <br>
