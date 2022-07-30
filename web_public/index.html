@@ -39,7 +39,7 @@ button.submit:hover {
 </head>
 <body>
 
-<h3>Stacy <3</h3>
+<h3>Stacy - Web</h3>
 
 <div class="container">
   
@@ -62,10 +62,26 @@ button.submit:hover {
     <button class="submit" onclick="SendRequest()"> SUBMIT </button>
     <hr><br>
     <div id="response">
-        --- RESPONSE ---
+        Example : <br>
+        <h4> Jokes </h4>
+        <code>send joke</code> - will send you a random joke<br>
+        <h4> Memes (reddit)</h4>
+        <code>send meme</code> - will send you a random meme (reddit)<br>
+        <h5> Syntax </h5>
+        <code>send meme [subreddit] [count]</code> -
+           will send you [count &lt; 10 ] memes from [subreddit]<br>
+        <h5> Example </h5>
+        <code>send meme linuxmemes 3</code> - will send you 3 random memes from r/linuxmemes<br>
+        
     </div>
   
 </div>
+<footer style="text-align:center;">
+  <!-- footer with copyright info -->
+  <p>&copy; Copyright wiz64 | <a href="https://github.com/wiz64/stacy/"> Stacy Github</a></p>
+
+
+</footer>
 <!-- load jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>

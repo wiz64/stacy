@@ -3,7 +3,7 @@
 
  var stacy_info = {
     name : "Miss Stacy",
-    version : "0.31",
+    version : "0.35",
     pfp : '../body/face/0.jpg',
     birth : {
         stamp:"2021-10-29T10:13:00+0000",
