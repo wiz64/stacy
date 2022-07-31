@@ -68,23 +68,25 @@ async function OnMessageEvent(data, spinal_cord) {
         memes = await getMeme(x,y);
         //console.log(memes)
         if(memes) {
-            memes.forEach(meme => {
+            await Promise.all(memes.map(async (meme) => {
                 if(meme.link) {
+                    
                     if(meme.link == "nsfw") {
-                        // Don't send nsfw stuff
-                       spinal_cord.reply(data, "Mumma told me not to look at creepy stuff");
-                       (async function main () {
                         // send a random meme instead
                         console.log("[thinking] "+ data.user.first_name + " is a creep");
                         meme = await getMeme(1);
-                        spinal_cord.replyWithPhoto(data, meme[0].link, meme[0].title);
-                    })();
-                            
+                        // Don't send nsfw stuff
+                        await spinal_cord.reply(data, "Mumma told me not to look at creepy stuff");                                            
+                        await spinal_cord.replyWithPhoto(data, meme[0].link, meme[0].title);
+                          
                     } else {
                         if(!meme.title) {meme.title="Here's your meme"}
                        spinal_cord.replyWithPhoto(data,meme.link,meme.title) }
+
+                    
+                
                 } else {spinal_cord.reply(data,"Sorry, I couldn't find any memes");}
-            })
+            }));
                 }
             };
         return;
