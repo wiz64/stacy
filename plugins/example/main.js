@@ -1,6 +1,7 @@
 // info object plugin data
 // you can also use your own external modules like
 // var example = require('./example.js')
+// use async functions to make it work properly
 
 var info = {
     "id": "example", // Here is the unique id of the plugin

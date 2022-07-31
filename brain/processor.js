@@ -4,7 +4,7 @@
 
 // quic is a frequently used library, we are defining it globally so that we can use it in the plugins
 global.quic = require('./quic.js');
-
+global.axios = require('axios');
 
 spinal_cord = require('./spinal_cord.js')
 plugin_system = require('./plugin_system.js');

@@ -34,7 +34,7 @@ async function replyWithPhoto(data, src, caption) {
     if(data.platform == 'web') {
         // sif message starts with https
         if(src.startsWith('https://')) {
-            msg = `<img src='${src}'> <br> ${caption} <br>`
+            msg = `<img src='${src}' class='stc-image'> <br> ${caption} <br>`
         }
         await data.res_array.push(msg);
         //console.log("push: "+data.res_array);

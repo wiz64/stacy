@@ -27,7 +27,7 @@ async function processMessage(ctx,res) {
         //console.log(user)
          await processor.process(msgData);
          res_array = msgData.res_array;
-        console.log(" array is "+ res_array)
+        console.log(" [WEB] Sending -> "+ res_array)
         var res_string = "";
         res_array.forEach(element => {
          if(element.startsWith('https://')) {
