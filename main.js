@@ -3,6 +3,7 @@ Stacy - Main Loader
 By wiz64
 This is the main loader for the program. It loads interfaces like telegram, web, discord, etc. and acts as the entry point for the program.
 */
+console.log('-----------------------------------------------------');
 console.log(` [INIT] Stacy is starting...`)
 
 
@@ -16,7 +17,8 @@ var greet = ` [GREET] Hello, I'm ${stacy_info.name} ! I am ${stacy_info.birth.ag
 console.log(greet)
 
 console.log("Version : " + stacy_info.version)
-
+console.log('-----------------------------------------------------');
+console.log(' [INIT] Loading interfaces...')
 // if telegram bot interface is enabled, start it
 if(process.env.USE_TELEGRAM == 1) {
 console.log(" [INFO] Starting Telegram Interface ...")

@@ -4,46 +4,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- favicon.jpg -->
 <link rel="icon" type="image/jpg" href="./favicon.jpg">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-button.submit {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button.submit:hover {
-  background-color: #45a049;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-img {
-  max-width: 100%;
-}
-.stc-image {
-  max-width: 500px;
-}
-</style>
 </head>
 <body>
 
@@ -73,14 +33,16 @@ img {
     <hr>
         Interactions : <br>
         <h4> Jokes </h4>
-        <code>send joke</code> - will send you a random joke<br>
+          <code>send joke</code> - will send you a random joke<br>
         <h4> Memes (reddit)</h4>
-        <code>send meme</code> - will send you a random meme (reddit)<br>
-        <h5> Syntax </h5>
-        <code>send meme [subreddit] [count]</code> -
-           will send you [count &lt; 10] memes from [subreddit]<br>
-        <h5> Example </h5>
-        <code>send meme linuxmemes 3</code> - will send you 3 random memes from r/linuxmemes<br>
+          <code>send meme</code> - will send you a random meme (reddit)<br>
+          <h5> Syntax </h5>
+          <code>send meme [subreddit] [count]</code> -
+            will send you [count &lt; 10] memes from [subreddit]<br>
+          <h5> Example </h5>
+          <code>send meme linuxmemes 3</code> - will send you 3 random memes from r/linuxmemes<br>
+        <h4> Random Animals </h4>
+          <code>send animal</code> - will send you a random animal (dog, bear, cat, etc)<br>
         
   
 </div>
@@ -100,6 +62,10 @@ img {
     var message = $('#message').val();
     // get the first name from the form
     var firstname = $('#fname').val();
+    if (!message) {
+        alert('Please enter a message (example - send meme)');
+        return;
+    }
     
     // send the message to the api
     $.ajax({
@@ -147,5 +113,45 @@ img {
     $('#fname').val(username);
   }
   </script>
+<style>
+  body {font-family: Arial, Helvetica, sans-serif;}
+  * {box-sizing: border-box;}
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  button.submit {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button.submit:hover {
+    background-color: #45a049;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  img {
+    max-width: 100%;
+  }
+  .stc-image {
+    max-width: 500px;
+  }
+  </style>
 </body>
 </html>
