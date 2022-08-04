@@ -66,6 +66,10 @@
         alert('Please enter a message (example - send meme)');
         return;
     }
+    if (!firstname) {
+        alert('Please enter your name Anon.');
+        return;
+    }
     
     // send the message to the api
     $.ajax({
