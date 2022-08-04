@@ -37,7 +37,12 @@ const client = new Client();
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+	client.user.setActivity("chess| Love mom&dad", {
+		type: "PLAYING",
+		url: "https://stacy.wiz64.com"
+	  })
 });
+
 
 // Receive messages sent in your server.
 client.on('message', message => {
