@@ -1,5 +1,9 @@
 # Changelog File
 for Miss Stacy
+## v0.35
+- [x] implemented web interface
+- [x] Deployed : https://stacy.wiz64.com
+- [x] Added random-animals plugin (`send animal`)
 
 ## v0.31
 - [x] added & implimented Discord bot
