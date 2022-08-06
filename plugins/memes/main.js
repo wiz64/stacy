@@ -55,7 +55,7 @@ async function getMeme(count, subreddit){
 async function OnMessageEvent(data, spinal_cord) {
     console.log("[MEMES] Checking if user requested a meme")
     try {
-    if(data.text.startsWith('send meme') || quic.containsWords(data.text,["stacy","meme"])) {
+    if(data.text.startsWith('send meme')) {
         var q = data.text.split(' ');
         if (q[2]) {
             var y = q[2];
@@ -88,7 +88,19 @@ async function OnMessageEvent(data, spinal_cord) {
                 } else {spinal_cord.reply(data,"Sorry, I couldn't find any memes");}
             }));
                 }
-            };
+            } else if (quic.containsWords(data.text,["stacy","meme"])) {
+                memes = await getMeme(1);
+        //console.log(memes)
+        if(memes) {
+            meme = memes[0];
+                if(meme.link) {
+                        if(!meme.title) {meme.title="Here's your meme"}
+                       spinal_cord.replyWithPhoto(data,meme.link,meme.title) }
+
+                    
+                
+                } else {spinal_cord.reply(data,"Sorry, I couldn't find any memes");}
+         }
         return;
     } catch(err) {error = "[ERROR] [MEMES] failed to process memes request ";console.log(error);quic.log(error + "\n ERR: \n" + err);spinal_cord.reply(data,"Sorry, I couldn't find any memes, err");}
     }
