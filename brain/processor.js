@@ -8,6 +8,9 @@ global.axios = require('axios');
 
 spinal_cord = require('./spinal_cord.js')
 plugin_system = require('./plugin_system.js');
+if (global.platform_name) {
+  console.log("Loading plugins for "+platform_name);
+}
 stc_Plugins = plugin_system.loadPlugins();
 
 async function process(data) {

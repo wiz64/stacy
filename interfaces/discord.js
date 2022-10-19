@@ -1,3 +1,4 @@
+global.platform_name = "DISCORD";
 const processor = require('../brain/processor.js')
 require('dotenv').config()
 

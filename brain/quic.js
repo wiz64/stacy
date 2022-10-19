@@ -48,7 +48,16 @@ function containsWords(text,list) {
     var words = text.split(" ");
     var contains = true;
     list.forEach(function(word) {
-        if(!words.includes(word)) {
+       if(word.includes("/")) {
+         word = word.split("/");
+         contains = false
+         word.forEach(function(phrase){
+           if(words.includes(phrase)) {
+             contains = true;
+           }
+         })
+       }
+        else if(!words.includes(word)) {
             contains = false;
         }
     });

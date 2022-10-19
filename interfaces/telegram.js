@@ -1,3 +1,4 @@
+global.platform_name = "Telegram";
 const { Telegraf } = require('telegraf')
 const processor = require('../brain/processor.js')
 require('dotenv').config()

@@ -1,4 +1,5 @@
-var stacy_info = require('../brain/init.js')
+global.stacy_info = require('../brain/init.js')
+global.platform_name = "WEB"
 var quic = require('../brain/quic.js')
 var processor = require('../brain/processor.js')
 var greet = ` [GREET] Hello, I'm ${stacy_info.name} ! I am ${stacy_info.birth.age}old. You can also call me ${quic.randomFromList(stacy_info.aliases)}.`

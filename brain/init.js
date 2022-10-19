@@ -12,7 +12,7 @@
         place:"Internet",
         age : getAge('2021-10-29T10:13:00+0000')
     },
-    aliases : ["Stacy", "Stacy the Bot", "Miss Stacy the Bot"],
+    aliases : ["Amicia"],
     country : "Antarctica",
     ethnicity : "Korean",
     species : "Humanoid Robot",
