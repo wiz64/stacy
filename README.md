@@ -21,7 +21,7 @@ or `send joke stacy` ,`send joke`,`send meme`,`send animal`<br>
 - Impliment Machine Learning / AI
 - Add Music API (https://docs.saavn.me)
 
-### This project is a tribute to a special one ! ❤️
+### This project is dedicated to a special one ! ❤️
 <hr>
 
 ### Start
