@@ -16,7 +16,7 @@ var init = function(init) {
 
 var OnMessageEvent = async function(data, spinal_cord) {
     console.log("[JOKES] Checking if user requested a joke");
-    if((data.text == 'send joke') || (quic.containsWords(data.text,["stacy","joke"]))  ) {
+    if((data.text == 'send joke') || (quic.containsWords(data.text,["stacy/amicia","joke"]))  ) {
         var joke = await jokes.getJoke();
         spinal_cord.reply(data,joke);
         return;

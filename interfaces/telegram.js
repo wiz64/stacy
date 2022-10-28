@@ -46,7 +46,7 @@ bot.use(async (ctx, next) => {
   //console.timeEnd(`Processing update ${ctx.update.update_id}`)
 })
 bot.help((ctx) => ctx.reply('Send me a sticker'))
-bot.on(MessageEvent, (ctx) => ctx.reply('👍'))
+//bot.on(MessageEvent, (ctx) => ctx.reply('👍'))
 bot.hears('hi', (ctx) => myF(ctx))
 bot.command('oldschool', (ctx) => ctx.reply('Hello'))
 bot.command('hipster', Telegraf.reply('λ'))

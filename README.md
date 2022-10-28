@@ -1,6 +1,9 @@
 # Stacy
 Stacy is a little girl who can manage your everyday tasks like posting to social media, blog, channels. She can post memes on your behalf, serve you memes, music and jokes, drive away your emptyness.
 
+![Happy Birthday Stacy](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=1FAC0D&width=435&lines=Happy+Birthday+Stacy+!+%2829th%20October%29)
+
+wish me `happy birthday`
 ### Interact :
 > Web : [stacy.wiz64.com](https://stacy.wiz64.com) <br>
 > Telegram : [@wiz64_stacy_bot](https://telegram.me/wiz64_stacy_bot) <br>

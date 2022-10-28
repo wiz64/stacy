@@ -41,13 +41,15 @@ function randomFromList(list) {
 function containsWords(text,list) {
     // lowercase the words in the list and check if the list contains all of the words in the text
     var text = text.toLowerCase();
+    // remove all non alphanumeric characters from the text
+    text = text.replace(/[^a-zA-Z0-9 ]/g, "");
     var list = list.map(function(word) {
         return word.toLowerCase();
     }
     );
     var words = text.split(" ");
     var contains = true;
-    list.forEach(function(word) {
+    list.forEach(function(word) { 
        if(word.includes("/")) {
          word = word.split("/");
          contains = false
