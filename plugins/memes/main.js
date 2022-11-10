@@ -88,7 +88,7 @@ async function OnMessageEvent(data, spinal_cord) {
                 } else {spinal_cord.reply(data,"Sorry, I couldn't find any memes");}
             }));
                 }
-            } else if (quic.containsWords(data.text,["stacy","meme"])) {
+            } else if (quic.containsWords(data.text,["stacy/amicia","meme"])) {
                 memes = await getMeme(1);
         //console.log(memes)
         if(memes) {

@@ -24,7 +24,7 @@ var OnMessageEvent = async function(data, spinal_cord) {
     // data object contains data of msg sending user and the message and session/context object
 
     //console.log("[Example] Checking if message is example command");
-    if( (quic.containsWords(data.text,["random","animal","stacy"])) || quic.command(data.text,"random animal")
+    if( (quic.containsWords(data.text,["random","animal","stacy/amicia"])) || quic.command(data.text,"random animal")
      || data.text.startsWith("send random animal") || data.text.startsWith("send animal") ) {
         var animal = await getAnimal();
         if(animal) {

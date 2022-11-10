@@ -15,6 +15,8 @@ var init = function(init) {
 
 var OnMessageEvent = async function(data, spinal_cord) {
     console.log("[Greet] OnMessageEvent");
+    var birthday = false;
+    if(birthday=true) {
     if((data.text.toLowerCase() == 'happy birthday') || (quic.containsWords(data.text,["stacy/amicia","happy","birthday/bday/b'day"]))  ) {
         // send a random thank you message and a smile to the user
         var bday_greetlist = ["Thank You so much ! I'm glad you remembered the date :D",
@@ -25,6 +27,11 @@ var OnMessageEvent = async function(data, spinal_cord) {
         // https://ibb.co/JvRzjdK thank you image - reply with photo
         spinal_cord.replyWithPhoto(data, "https://i.ibb.co/c6cNhv1/pexels-george-dolgikh-2072165-2.jpg", "Thank You !");
         return;
+    }}
+    if((quic.containsWords(data.text,["hi/hello/hlo"]))  ) {
+        // greet hello
+
+        spinal_cord.reply(data,"Hello ! I'm Stacy");
     }
     //do stuff
 }
