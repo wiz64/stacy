@@ -1,4 +1,4 @@
-BASE_MEME_API = "https://meme-api.herokuapp.com/gimme"
+BASE_MEME_API = "https://meme-api.com/gimme"
 const axios = require('axios');
 
 
