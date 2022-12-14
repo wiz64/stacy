@@ -42,26 +42,34 @@ function containsWords(text,list) {
     // lowercase the words in the list and check if the list contains all of the words in the text
     var text = text.toLowerCase();
     // remove all non alphanumeric characters from the text
-    text = text.replace(/[^a-zA-Z0-9 ]/g, "");
+    text = text.replace(/[\u{0080}-\u{FFFF}]/gu, "");
     var list = list.map(function(word) {
         return word.toLowerCase();
     }
     );
     var words = text.split(" ");
     var contains = true;
+    var index = [];
     list.forEach(function(word) { 
        if(word.includes("/")) {
+         raw_word = word;
          word = word.split("/");
-         contains = false
+         index[list.indexOf(raw_word)] = false;
          word.forEach(function(phrase){
            if(words.includes(phrase)) {
-             contains = true;
+             index[list.indexOf(raw_word)] = true;
            }
          })
        }
         else if(!words.includes(word)) {
-            contains = false;
+            index[list.indexOf(word)] = false;
         }
+      index.forEach(function(ind) {
+        if(ind == false){
+          contains = false
+        }
+        
+      })
     });
     return contains;
 }
