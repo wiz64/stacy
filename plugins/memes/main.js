@@ -55,6 +55,16 @@ async function getMeme(count, subreddit){
 async function OnMessageEvent(data, spinal_cord) {
     console.log("[MEMES] Checking if user requested a meme")
     try {
+        if(quic.containsWords(data.text,["stacy/amicia","meme/memes","linux"])) {
+            var meme = await getMeme(1,"linuxmemes");
+            console.log(meme)
+            if(meme) {
+                if(meme) {
+                        if(!meme[0].title) {meme[0].title="Here's your linux meme"}
+                       await spinal_cord.replyWithPhoto(data,meme[0].link,meme[0].title) }
+                } else {await spinal_cord.reply(data,"Sorry, I couldn't find any linux memes");}
+
+         } else
     if(data.text.startsWith('send meme')) {
         var q = data.text.split(' ');
         if (q[2]) {
@@ -65,28 +75,34 @@ async function OnMessageEvent(data, spinal_cord) {
             var x = q[3];
         }
         else { q = null}
-        memes = await getMeme(x,y);
+        var memes = await getMeme(x,y);
         //console.log(memes)
         if(memes) {
-            await Promise.all(memes.map(async (meme) => {
+            // send all one by one
+            console.log(memes)
+            async function sendmeme(meme) {
                 if(meme.link) {
                     
                     if(meme.link == "nsfw") {
                         // send a random meme instead
                         console.log("[thinking] "+ data.user.first_name + " is a creep");
                         meme = await getMeme(1);
+                        console.log(meme);
                         // Don't send nsfw stuff
                         await spinal_cord.reply(data, "Mumma told me not to look at creepy stuff");                                            
                         await spinal_cord.replyWithPhoto(data, meme[0].link, meme[0].title);
                           
                     } else {
                         if(!meme.title) {meme.title="Here's your meme"}
-                       spinal_cord.replyWithPhoto(data,meme.link,meme.title) }
+                       await spinal_cord.replyWithPhoto(data,meme.link,meme.title) }
 
                     
                 
-                } else {spinal_cord.reply(data,"Sorry, I couldn't find any memes");}
-            }));
+                } else {await spinal_cord.reply(data,"Sorry, I couldn't find any memes");}
+            }
+            for (var i = 0; i < memes.length; i++) {
+                await sendmeme(memes[i]);
+            }
                 }
             } else if (quic.containsWords(data.text,["stacy/amicia","meme"])) {
                 memes = await getMeme(1);
@@ -95,12 +111,12 @@ async function OnMessageEvent(data, spinal_cord) {
             meme = memes[0];
                 if(meme.link) {
                         if(!meme.title) {meme.title="Here's your meme"}
-                       spinal_cord.replyWithPhoto(data,meme.link,meme.title) }
+                       await spinal_cord.replyWithPhoto(data,meme.link,meme.title) }
 
                     
                 
-                } else {spinal_cord.reply(data,"Sorry, I couldn't find any memes");}
-         }
+                } else {await spinal_cord.reply(data,"Sorry, I couldn't find any memes");}
+         } 
         return;
     } catch(err) {error = "[ERROR] [MEMES] failed to process memes request ";console.log(error);quic.log(error + "\n ERR: \n" + err);spinal_cord.reply(data,"Sorry, I couldn't find any memes, err");}
     }

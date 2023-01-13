@@ -16,6 +16,7 @@ function ProcessMessage(ctx) {
   botInfo = ctx.botInfo;
   console.log(`LOGGED IN AS  [${botInfo.first_name}] @${botInfo.username} (${botInfo.id})`)
 }
+try {
 msgData = {
   platform: 'telegram',
   user : {
@@ -28,6 +29,7 @@ msgData = {
   id : ctx.update.message.message_id,
   ctxObj: ctx
 }
+} catch(err) {console.log(err)}
   //console.log(user)
   processor.process(msgData)
   console.log(`[TG] ${msgData.user.first_name} (${msgData.user.username}) sent: ${msgData.text}`)

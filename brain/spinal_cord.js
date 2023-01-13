@@ -29,7 +29,7 @@ async function replyWithPhoto(data, src, caption) {
     if(data.platform == 'discord') {
         // send message to discord channel
         await ctx.channel.send(src);
-        if (caption) ctx.channel.send(caption);
+        if (caption) await ctx.channel.send(caption);
     }
     if(data.platform == 'web') {
         // sif message starts with https
