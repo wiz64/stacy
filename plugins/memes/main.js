@@ -87,7 +87,7 @@ async function OnMessageEvent(data, spinal_cord) {
                         // send a random meme instead
                         console.log("[thinking] "+ data.user.first_name + " is a creep");
                         meme = await getMeme(1);
-                        console.log(meme);
+                        //console.log(meme);
                         // Don't send nsfw stuff
                         await spinal_cord.reply(data, "Mumma told me not to look at creepy stuff");                                            
                         await spinal_cord.replyWithPhoto(data, meme[0].link, meme[0].title);
