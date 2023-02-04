@@ -41,6 +41,15 @@ async function replyWithPhoto(data, src, caption) {
 
     }
 }
+
+async function replyWithAudio(data, src, thumb, name, artist, duration){
+  if(data.platform == 'telegram'){
+    ctx = data.ctxObj;
+    ctx.replyWithAudio({url: src, filename: name+".mp3"},{title: name, performer: artist, duration: duration, thumb:{url: thumb}});
+  }else{}
+  
+}
+
 module.exports = {
     reply: reply,
     replyWithPhoto: replyWithPhoto
